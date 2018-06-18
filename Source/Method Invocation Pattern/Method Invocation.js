@@ -3,7 +3,7 @@ var incrementer = {
     // Define the value
     value: 0,
 
-    // Define an increment function.
+    // Define an setValue function.
     increment: function(inc) {
         // 'this' is bound to the containing object.
         this.value += typeof inc === 'number'

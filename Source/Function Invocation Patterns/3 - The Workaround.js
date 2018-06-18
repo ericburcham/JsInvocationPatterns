@@ -1,0 +1,29 @@
+// Define an object that increments values.
+var doubler = {
+    // Define the value
+    value: 0,
+
+    // Define an setValue function.
+    setValue: function(value) {
+        // 'this' is bound to the containing object.
+        this.value = value;
+    },
+
+    // Define a double function to double the value.
+    double: function () {
+        var self = this;
+
+        var doubleTheValue = function(){
+            // 'this' is bound to the global object.
+            self.value = self.value + self.value;
+        };
+
+        doubleTheValue();
+    }
+};
+
+doubler.setValue(5);
+console.log(doubler.value) // 5;
+
+doubler.double(); // Error
+console.log(doubler.value); // 10.

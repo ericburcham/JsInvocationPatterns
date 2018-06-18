@@ -1,0 +1,17 @@
+// Let's define the status quo.
+var quo = function(value){
+    this.status = value;
+};
+
+// Somebody defined this with a lower-case, so we'll invoke it without the 'new' prefix.
+quo("confused");
+
+// Give all instances of quo a function to get their status.
+quo.prototype.get_status = function(){
+    return this.status;
+}
+
+console.log(status); // confused.  Which is really strange, because we didn't define 'status' in this lexical scope.
+
+var statusQuo = quo.get_status();
+console.log(statusQuo); // Confused

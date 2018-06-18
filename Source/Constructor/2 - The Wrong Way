@@ -11,7 +11,8 @@ quo.prototype.get_status = function(){
     return this.status;
 }
 
-console.log(status); // confused.  Which is really strange, because we didn't define 'status' in this lexical scope.
+console.log(status); // confused.  We polluted the global object again!
 
+//
 var statusQuo = quo.get_status();
 console.log(statusQuo); // Confused
